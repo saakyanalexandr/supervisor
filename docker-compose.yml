@@ -1,0 +1,14 @@
+services:
+  cron-supervisor:
+    build:
+      context: .
+      args:
+        - PROJECT_PATH=${PROJECT_PATH}
+    container_name: cron-supervisor
+    env_file: .env
+    ports:
+      - ${ENDPOINT_PORT}:${LISTEN_PORT}
+    volumes:
+      - ./app:${PROJECT_PATH}
+      - ./logs:/var/log/supervisor
+    command: ["/entrypoint.sh"]

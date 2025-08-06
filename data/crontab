@@ -1,0 +1,2 @@
+# API healthcheck
+0 * * * * wget -qO- http://localhost:${API_PORT:-8080}/health || echo "Healthcheck failed"
