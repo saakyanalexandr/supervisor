@@ -26,6 +26,6 @@ autostart = true
 autorestart = true
 
 [program:server]
-command = php -S ${LISTEN_IP:-0.0.0.0}:${LISTEN_PORT:-8080} -t ${PROJECT_PATH:-/var/www/app}/public ${PROJECT_PATH:-/var/www/app}/public/index.php
-autostart = true
-autorestart = true
+command=php -S ${LISTEN_IP}:${LISTEN_PORT} -t ${PROJECT_PATH}/public ${PROJECT_PATH}/public/index.php
+autostart=true
+autorestart=true
